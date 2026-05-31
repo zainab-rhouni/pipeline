@@ -1,0 +1,428 @@
+[0m13:34:02.284144 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025C47744980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025C4987FD90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025C4987FC50>]}
+
+
+============================== 13:34:02.292475 | eea8a8e1-a574-4d5f-bd8a-5b19223fca85 ==============================
+[0m13:34:02.292475 [info ] [MainThread]: Running with dbt=1.11.11
+[0m13:34:02.294190 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt debug --profiles-dir .', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\PC\\tp_chapitre2_pipeline\\dbt_pipeline\\logs'}
+[0m13:34:02.343621 [info ] [MainThread]: dbt version: 1.11.11
+[0m13:34:02.344852 [info ] [MainThread]: python version: 3.13.9
+[0m13:34:02.347592 [info ] [MainThread]: python path: C:\Users\PC\tp_chapitre2_pipeline\.venv\Scripts\python.exe
+[0m13:34:02.351129 [info ] [MainThread]: os info: Windows-10-10.0.19045-SP0
+[0m13:34:02.358219 [error] [MainThread]: Encountered an error:
+argument of type 'NoneType' is not iterable
+[0m13:34:02.367122 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\PC\tp_chapitre2_pipeline\.venv\Lib\site-packages\dbt\cli\requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\tp_chapitre2_pipeline\.venv\Lib\site-packages\dbt\cli\requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\PC\tp_chapitre2_pipeline\.venv\Lib\site-packages\dbt\cli\main.py", line 425, in debug
+    results = task.run()
+  File "C:\Users\PC\tp_chapitre2_pipeline\.venv\Lib\site-packages\dbt\task\debug.py", line 114, in run
+    load_profile_status: SubtaskStatus = self._load_profile()
+                                         ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\PC\tp_chapitre2_pipeline\.venv\Lib\site-packages\dbt\task\debug.py", line 205, in _load_profile
+    profile: Profile = Profile.render(
+                       ~~~~~~~~~~~~~~^
+        renderer,
+        ^^^^^^^^^
+    ...<5 lines>...
+        getattr(self.args, "threads", None),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\tp_chapitre2_pipeline\.venv\Lib\site-packages\dbt\config\profile.py", line 404, in render
+    return cls.from_raw_profiles(
+           ~~~~~~~~~~~~~~~~~~~~~^
+        raw_profiles=raw_profiles,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        threads_override=threads_override,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\tp_chapitre2_pipeline\.venv\Lib\site-packages\dbt\config\profile.py", line 370, in from_raw_profiles
+    return cls.from_raw_profile_info(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        raw_profile=raw_profile,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        threads_override=threads_override,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\tp_chapitre2_pipeline\.venv\Lib\site-packages\dbt\config\profile.py", line 316, in from_raw_profile_info
+    target_name, profile_data = cls.render_profile(
+                                ~~~~~~~~~~~~~~~~~~^
+        raw_profile, profile_name, target_override, renderer
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\tp_chapitre2_pipeline\.venv\Lib\site-packages\dbt\config\profile.py", line 282, in render_profile
+    raw_profile_data = cls._get_profile_data(raw_profile, profile_name, target_name)
+  File "C:\Users\PC\tp_chapitre2_pipeline\.venv\Lib\site-packages\dbt\config\profile.py", line 207, in _get_profile_data
+    if target_name not in outputs:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'NoneType' is not iterable
+
+[0m13:34:02.375186 [debug] [MainThread]: Command `dbt debug` failed at 13:34:02.374894 after 0.40 seconds
+[0m13:34:02.375849 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025C498CE060>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025C49958950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025C499306B0>]}
+[0m13:34:02.376804 [debug] [MainThread]: Flushing usage events
+[0m13:34:03.622833 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:35:52.313225 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000257BC0C4980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000257BE1FBD90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000257BE1FBC50>]}
+
+
+============================== 13:35:52.322090 | 087fc0c2-8c97-4d7b-b65a-880113f8a682 ==============================
+[0m13:35:52.322090 [info ] [MainThread]: Running with dbt=1.11.11
+[0m13:35:52.324267 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt debug --profiles-dir .', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\PC\\tp_chapitre2_pipeline\\dbt_pipeline\\logs'}
+[0m13:35:52.367352 [info ] [MainThread]: dbt version: 1.11.11
+[0m13:35:52.368421 [info ] [MainThread]: python version: 3.13.9
+[0m13:35:52.371097 [info ] [MainThread]: python path: C:\Users\PC\tp_chapitre2_pipeline\.venv\Scripts\python.exe
+[0m13:35:52.376448 [info ] [MainThread]: os info: Windows-10-10.0.19045-SP0
+[0m13:35:52.383025 [error] [MainThread]: Encountered an error:
+argument of type 'NoneType' is not iterable
+[0m13:35:52.394098 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\PC\tp_chapitre2_pipeline\.venv\Lib\site-packages\dbt\cli\requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\tp_chapitre2_pipeline\.venv\Lib\site-packages\dbt\cli\requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\PC\tp_chapitre2_pipeline\.venv\Lib\site-packages\dbt\cli\main.py", line 425, in debug
+    results = task.run()
+  File "C:\Users\PC\tp_chapitre2_pipeline\.venv\Lib\site-packages\dbt\task\debug.py", line 114, in run
+    load_profile_status: SubtaskStatus = self._load_profile()
+                                         ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\PC\tp_chapitre2_pipeline\.venv\Lib\site-packages\dbt\task\debug.py", line 205, in _load_profile
+    profile: Profile = Profile.render(
+                       ~~~~~~~~~~~~~~^
+        renderer,
+        ^^^^^^^^^
+    ...<5 lines>...
+        getattr(self.args, "threads", None),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\tp_chapitre2_pipeline\.venv\Lib\site-packages\dbt\config\profile.py", line 404, in render
+    return cls.from_raw_profiles(
+           ~~~~~~~~~~~~~~~~~~~~~^
+        raw_profiles=raw_profiles,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        threads_override=threads_override,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\tp_chapitre2_pipeline\.venv\Lib\site-packages\dbt\config\profile.py", line 370, in from_raw_profiles
+    return cls.from_raw_profile_info(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        raw_profile=raw_profile,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        threads_override=threads_override,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\tp_chapitre2_pipeline\.venv\Lib\site-packages\dbt\config\profile.py", line 316, in from_raw_profile_info
+    target_name, profile_data = cls.render_profile(
+                                ~~~~~~~~~~~~~~~~~~^
+        raw_profile, profile_name, target_override, renderer
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\tp_chapitre2_pipeline\.venv\Lib\site-packages\dbt\config\profile.py", line 282, in render_profile
+    raw_profile_data = cls._get_profile_data(raw_profile, profile_name, target_name)
+  File "C:\Users\PC\tp_chapitre2_pipeline\.venv\Lib\site-packages\dbt\config\profile.py", line 207, in _get_profile_data
+    if target_name not in outputs:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'NoneType' is not iterable
+
+[0m13:35:52.400618 [debug] [MainThread]: Command `dbt debug` failed at 13:35:52.400308 after 0.43 seconds
+[0m13:35:52.401290 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000257BE24E060>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000257BE2DC950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000257BE2B06B0>]}
+[0m13:35:52.401939 [debug] [MainThread]: Flushing usage events
+[0m13:35:53.696601 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:37:57.999814 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000240AF504980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000240B163FD90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000240B163FC50>]}
+
+
+============================== 13:37:58.007463 | 60d93a5e-e033-44db-8c90-b83b1f19db96 ==============================
+[0m13:37:58.007463 [info ] [MainThread]: Running with dbt=1.11.11
+[0m13:37:58.008590 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt debug --profiles-dir .', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\PC\\tp_chapitre2_pipeline\\dbt_pipeline\\logs'}
+[0m13:37:58.051376 [info ] [MainThread]: dbt version: 1.11.11
+[0m13:37:58.052374 [info ] [MainThread]: python version: 3.13.9
+[0m13:37:58.053259 [info ] [MainThread]: python path: C:\Users\PC\tp_chapitre2_pipeline\.venv\Scripts\python.exe
+[0m13:37:58.054222 [info ] [MainThread]: os info: Windows-10-10.0.19045-SP0
+[0m13:37:58.264889 [info ] [MainThread]: Using profiles dir at .
+[0m13:37:58.265923 [info ] [MainThread]: Using profiles.yml file at .\profiles.yml
+[0m13:37:58.266751 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\PC\tp_chapitre2_pipeline\dbt_pipeline\dbt_project.yml
+[0m13:37:58.271535 [info ] [MainThread]: adapter type: duckdb
+[0m13:37:58.272441 [info ] [MainThread]: adapter version: 1.10.1
+[0m13:37:58.504267 [info ] [MainThread]: Configuration:
+[0m13:37:58.505342 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m13:37:58.506320 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m13:37:58.507240 [info ] [MainThread]: Required dependencies:
+[0m13:37:58.508118 [debug] [MainThread]: Executing "git --help"
+[0m13:37:58.565020 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m13:37:58.565732 [debug] [MainThread]: STDERR: "b''"
+[0m13:37:58.566372 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m13:37:58.567237 [info ] [MainThread]: Connection:
+[0m13:37:58.568020 [info ] [MainThread]:   database: ventes
+[0m13:37:58.568741 [info ] [MainThread]:   schema: main
+[0m13:37:58.569482 [info ] [MainThread]:   path: ../ventes.duckdb
+[0m13:37:58.570237 [info ] [MainThread]:   config_options: None
+[0m13:37:58.571159 [info ] [MainThread]:   extensions: None
+[0m13:37:58.571879 [info ] [MainThread]:   settings: {}
+[0m13:37:58.572597 [info ] [MainThread]:   external_root: .
+[0m13:37:58.573269 [info ] [MainThread]:   use_credential_provider: None
+[0m13:37:58.573926 [info ] [MainThread]:   attach: None
+[0m13:37:58.574580 [info ] [MainThread]:   filesystems: None
+[0m13:37:58.575332 [info ] [MainThread]:   remote: None
+[0m13:37:58.576147 [info ] [MainThread]:   plugins: None
+[0m13:37:58.577183 [info ] [MainThread]:   disable_transactions: False
+[0m13:37:58.578544 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m13:37:58.975375 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
+[0m13:38:02.782835 [debug] [MainThread]: Using duckdb connection "debug"
+[0m13:38:02.783454 [debug] [MainThread]: On debug: select 1 as id
+[0m13:38:02.783941 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:38:02.809263 [debug] [MainThread]: SQL status: OK in 0.025 seconds
+[0m13:38:02.810835 [debug] [MainThread]: On debug: Close
+[0m13:38:02.811435 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m13:38:02.812781 [info ] [MainThread]: [32mAll checks passed![0m
+[0m13:38:02.816559 [debug] [MainThread]: Command `dbt debug` succeeded at 13:38:02.816252 after 5.09 seconds
+[0m13:38:02.817173 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m13:38:02.817790 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000240B198BE10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000240B1A1EC30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000240B196E8B0>]}
+[0m13:38:02.818548 [debug] [MainThread]: Flushing usage events
+[0m13:38:03.983949 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:41:10.679825 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BDF1DA4980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BDF3F33C50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BDF3F33B10>]}
+
+
+============================== 13:41:10.687011 | 16292080-b2b3-4fae-b19e-6e73285a4837 ==============================
+[0m13:41:10.687011 [info ] [MainThread]: Running with dbt=1.11.11
+[0m13:41:10.688152 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'indirect_selection': 'eager', 'invocation_command': 'dbt run --profiles-dir .', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\PC\\tp_chapitre2_pipeline\\dbt_pipeline\\logs'}
+[0m13:41:11.357904 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '16292080-b2b3-4fae-b19e-6e73285a4837', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BDF21A7BB0>]}
+[0m13:41:11.508004 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '16292080-b2b3-4fae-b19e-6e73285a4837', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BDF2D8F020>]}
+[0m13:41:11.512579 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m13:41:11.950202 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m13:41:11.951833 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m13:41:11.952927 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '16292080-b2b3-4fae-b19e-6e73285a4837', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BDF401B150>]}
+[0m13:41:15.502999 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '16292080-b2b3-4fae-b19e-6e73285a4837', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BDF409F5C0>]}
+[0m13:41:15.618291 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\PC\tp_chapitre2_pipeline\dbt_pipeline\target\manifest.json
+[0m13:41:15.624054 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\PC\tp_chapitre2_pipeline\dbt_pipeline\target\semantic_manifest.json
+[0m13:41:15.650914 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '16292080-b2b3-4fae-b19e-6e73285a4837', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BDF48398D0>]}
+[0m13:41:15.651882 [info ] [MainThread]: Found 2 models, 485 macros
+[0m13:41:15.652910 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '16292080-b2b3-4fae-b19e-6e73285a4837', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BDF45307A0>]}
+[0m13:41:15.656522 [info ] [MainThread]: 
+[0m13:41:15.657803 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m13:41:15.658957 [info ] [MainThread]: 
+[0m13:41:15.660644 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m13:41:15.670440 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_ventes'
+[0m13:41:15.788260 [debug] [ThreadPool]: Using duckdb connection "list_ventes"
+[0m13:41:15.788856 [debug] [ThreadPool]: On list_ventes: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_pipeline", "target_name": "dev", "connection_name": "list_ventes"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"ventes"'
+    
+  
+  
+[0m13:41:15.789309 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:41:15.814404 [debug] [ThreadPool]: SQL status: OK in 0.025 seconds
+[0m13:41:15.816535 [debug] [ThreadPool]: On list_ventes: Close
+[0m13:41:15.817704 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_ventes, now create_ventes_main)
+[0m13:41:15.818423 [debug] [ThreadPool]: Creating schema "database: "ventes"
+schema: "main"
+"
+[0m13:41:15.827613 [debug] [ThreadPool]: Using duckdb connection "create_ventes_main"
+[0m13:41:15.828171 [debug] [ThreadPool]: On create_ventes_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_pipeline", "target_name": "dev", "connection_name": "create_ventes_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='ventes'
+        and type='sqlite'
+    
+  
+[0m13:41:15.828614 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:41:15.830193 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m13:41:15.832458 [debug] [ThreadPool]: Using duckdb connection "create_ventes_main"
+[0m13:41:15.832949 [debug] [ThreadPool]: On create_ventes_main: BEGIN
+[0m13:41:15.833734 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m13:41:15.834184 [debug] [ThreadPool]: Using duckdb connection "create_ventes_main"
+[0m13:41:15.834620 [debug] [ThreadPool]: On create_ventes_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_pipeline", "target_name": "dev", "connection_name": "create_ventes_main"} */
+
+    
+    
+        create schema if not exists "ventes"."main"
+    
+[0m13:41:15.835504 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m13:41:15.836777 [debug] [ThreadPool]: On create_ventes_main: COMMIT
+[0m13:41:15.837252 [debug] [ThreadPool]: Using duckdb connection "create_ventes_main"
+[0m13:41:15.837684 [debug] [ThreadPool]: On create_ventes_main: COMMIT
+[0m13:41:15.838428 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m13:41:15.838892 [debug] [ThreadPool]: On create_ventes_main: Close
+[0m13:41:15.841044 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_ventes_main'
+[0m13:41:15.851490 [debug] [ThreadPool]: Using duckdb connection "list_ventes_main"
+[0m13:41:15.852079 [debug] [ThreadPool]: On list_ventes_main: BEGIN
+[0m13:41:15.852527 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:41:15.853528 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m13:41:15.853995 [debug] [ThreadPool]: Using duckdb connection "list_ventes_main"
+[0m13:41:15.854450 [debug] [ThreadPool]: On list_ventes_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_pipeline", "target_name": "dev", "connection_name": "list_ventes_main"} */
+select
+      'ventes' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'ventes'
+  
+[0m13:41:15.860092 [debug] [ThreadPool]: SQL status: OK in 0.005 seconds
+[0m13:41:15.862068 [debug] [ThreadPool]: On list_ventes_main: ROLLBACK
+[0m13:41:15.864033 [debug] [ThreadPool]: Failed to rollback 'list_ventes_main'
+[0m13:41:15.864618 [debug] [ThreadPool]: On list_ventes_main: Close
+[0m13:41:15.866135 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '16292080-b2b3-4fae-b19e-6e73285a4837', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BDF4A1CD10>]}
+[0m13:41:15.866885 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:41:15.867392 [debug] [MainThread]: On master: BEGIN
+[0m13:41:15.867868 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:41:15.868806 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m13:41:15.869329 [debug] [MainThread]: On master: COMMIT
+[0m13:41:15.869827 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:41:15.870308 [debug] [MainThread]: On master: COMMIT
+[0m13:41:15.871058 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m13:41:15.871573 [debug] [MainThread]: On master: Close
+[0m13:41:15.879483 [debug] [Thread-1 (]: Began running node model.dbt_pipeline.ventes_clean
+[0m13:41:15.880720 [info ] [Thread-1 (]: 1 of 2 START sql table model main.ventes_clean ................................. [RUN]
+[0m13:41:15.882420 [debug] [Thread-1 (]: Acquiring new duckdb connection 'model.dbt_pipeline.ventes_clean'
+[0m13:41:15.883586 [debug] [Thread-1 (]: Began compiling node model.dbt_pipeline.ventes_clean
+[0m13:41:15.893519 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_pipeline.ventes_clean"
+[0m13:41:15.896913 [debug] [Thread-1 (]: Began executing node model.dbt_pipeline.ventes_clean
+[0m13:41:15.955044 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_pipeline.ventes_clean"
+[0m13:41:15.957989 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_pipeline.ventes_clean"
+[0m13:41:15.958717 [debug] [Thread-1 (]: On model.dbt_pipeline.ventes_clean: BEGIN
+[0m13:41:15.959256 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m13:41:15.960490 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m13:41:15.961051 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_pipeline.ventes_clean"
+[0m13:41:15.961596 [debug] [Thread-1 (]: On model.dbt_pipeline.ventes_clean: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_pipeline", "target_name": "dev", "node_id": "model.dbt_pipeline.ventes_clean"} */
+
+  
+    
+    
+
+    create  table
+      "ventes"."main"."ventes_clean__dbt_tmp"
+  
+    as (
+      select
+ date,
+ produit,
+ categorie,
+ quantite,
+ prix_unitaire,
+ ville,
+ quantite * prix_unitaire as chiffre_affaires
+from ventes_raw
+where quantite > 0 and prix_unitaire > 0
+    );
+  
+  
+[0m13:41:15.964385 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m13:41:15.973576 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_pipeline.ventes_clean"
+[0m13:41:15.974229 [debug] [Thread-1 (]: On model.dbt_pipeline.ventes_clean: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_pipeline", "target_name": "dev", "node_id": "model.dbt_pipeline.ventes_clean"} */
+alter table "ventes"."main"."ventes_clean__dbt_tmp" rename to "ventes_clean"
+[0m13:41:15.975436 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m13:41:15.999332 [debug] [Thread-1 (]: On model.dbt_pipeline.ventes_clean: COMMIT
+[0m13:41:16.000035 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_pipeline.ventes_clean"
+[0m13:41:16.000599 [debug] [Thread-1 (]: On model.dbt_pipeline.ventes_clean: COMMIT
+[0m13:41:16.003496 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m13:41:16.013724 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_pipeline.ventes_clean"
+[0m13:41:16.014458 [debug] [Thread-1 (]: On model.dbt_pipeline.ventes_clean: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_pipeline", "target_name": "dev", "node_id": "model.dbt_pipeline.ventes_clean"} */
+
+      drop table if exists "ventes"."main"."ventes_clean__dbt_backup" cascade
+    
+[0m13:41:16.015714 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m13:41:16.019731 [debug] [Thread-1 (]: On model.dbt_pipeline.ventes_clean: Close
+[0m13:41:16.023351 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '16292080-b2b3-4fae-b19e-6e73285a4837', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BDF478A6D0>]}
+[0m13:41:16.024617 [info ] [Thread-1 (]: 1 of 2 OK created sql table model main.ventes_clean ............................ [[32mOK[0m in 0.14s]
+[0m13:41:16.026391 [debug] [Thread-1 (]: Finished running node model.dbt_pipeline.ventes_clean
+[0m13:41:16.027957 [debug] [Thread-1 (]: Began running node model.dbt_pipeline.ventes_resume
+[0m13:41:16.029191 [info ] [Thread-1 (]: 2 of 2 START sql table model main.ventes_resume ................................ [RUN]
+[0m13:41:16.031326 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_pipeline.ventes_clean, now model.dbt_pipeline.ventes_resume)
+[0m13:41:16.032224 [debug] [Thread-1 (]: Began compiling node model.dbt_pipeline.ventes_resume
+[0m13:41:16.037993 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_pipeline.ventes_resume"
+[0m13:41:16.039910 [debug] [Thread-1 (]: Began executing node model.dbt_pipeline.ventes_resume
+[0m13:41:16.046139 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_pipeline.ventes_resume"
+[0m13:41:16.048855 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_pipeline.ventes_resume"
+[0m13:41:16.049751 [debug] [Thread-1 (]: On model.dbt_pipeline.ventes_resume: BEGIN
+[0m13:41:16.050709 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:41:16.051892 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m13:41:16.052557 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_pipeline.ventes_resume"
+[0m13:41:16.053098 [debug] [Thread-1 (]: On model.dbt_pipeline.ventes_resume: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_pipeline", "target_name": "dev", "node_id": "model.dbt_pipeline.ventes_resume"} */
+
+  
+    
+    
+
+    create  table
+      "ventes"."main"."ventes_resume__dbt_tmp"
+  
+    as (
+      select
+ categorie,
+ sum(quantite) as total_quantite,
+ sum(chiffre_affaires) as total_ca
+from "ventes"."main"."ventes_clean"
+group by categorie
+    );
+  
+  
+[0m13:41:16.056868 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m13:41:16.061508 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_pipeline.ventes_resume"
+[0m13:41:16.062136 [debug] [Thread-1 (]: On model.dbt_pipeline.ventes_resume: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_pipeline", "target_name": "dev", "node_id": "model.dbt_pipeline.ventes_resume"} */
+alter table "ventes"."main"."ventes_resume__dbt_tmp" rename to "ventes_resume"
+[0m13:41:16.063700 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m13:41:16.067051 [debug] [Thread-1 (]: On model.dbt_pipeline.ventes_resume: COMMIT
+[0m13:41:16.067734 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_pipeline.ventes_resume"
+[0m13:41:16.068321 [debug] [Thread-1 (]: On model.dbt_pipeline.ventes_resume: COMMIT
+[0m13:41:16.070885 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m13:41:16.074452 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_pipeline.ventes_resume"
+[0m13:41:16.075017 [debug] [Thread-1 (]: On model.dbt_pipeline.ventes_resume: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_pipeline", "target_name": "dev", "node_id": "model.dbt_pipeline.ventes_resume"} */
+
+      drop table if exists "ventes"."main"."ventes_resume__dbt_backup" cascade
+    
+[0m13:41:16.076020 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m13:41:16.077964 [debug] [Thread-1 (]: On model.dbt_pipeline.ventes_resume: Close
+[0m13:41:16.078739 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '16292080-b2b3-4fae-b19e-6e73285a4837', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BDF5C11BD0>]}
+[0m13:41:16.079912 [info ] [Thread-1 (]: 2 of 2 OK created sql table model main.ventes_resume ........................... [[32mOK[0m in 0.05s]
+[0m13:41:16.081824 [debug] [Thread-1 (]: Finished running node model.dbt_pipeline.ventes_resume
+[0m13:41:16.084390 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:41:16.085055 [debug] [MainThread]: On master: BEGIN
+[0m13:41:16.085508 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m13:41:16.086513 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m13:41:16.086994 [debug] [MainThread]: On master: COMMIT
+[0m13:41:16.087438 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:41:16.087862 [debug] [MainThread]: On master: COMMIT
+[0m13:41:16.088597 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m13:41:16.089051 [debug] [MainThread]: On master: Close
+[0m13:41:16.089627 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:41:16.090036 [debug] [MainThread]: Connection 'create_ventes_main' was properly closed.
+[0m13:41:16.090431 [debug] [MainThread]: Connection 'list_ventes_main' was properly closed.
+[0m13:41:16.090821 [debug] [MainThread]: Connection 'model.dbt_pipeline.ventes_resume' was properly closed.
+[0m13:41:16.091330 [info ] [MainThread]: 
+[0m13:41:16.092174 [info ] [MainThread]: Finished running 2 table models in 0 hours 0 minutes and 0.43 seconds (0.43s).
+[0m13:41:16.094189 [debug] [MainThread]: Command end result
+[0m13:41:16.146968 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\PC\tp_chapitre2_pipeline\dbt_pipeline\target\manifest.json
+[0m13:41:16.151007 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\PC\tp_chapitre2_pipeline\dbt_pipeline\target\semantic_manifest.json
+[0m13:41:16.160575 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\PC\tp_chapitre2_pipeline\dbt_pipeline\target\run_results.json
+[0m13:41:16.161308 [info ] [MainThread]: 
+[0m13:41:16.162478 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m13:41:16.168129 [info ] [MainThread]: 
+[0m13:41:16.169139 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m13:41:16.171438 [debug] [MainThread]: Command `dbt run` succeeded at 13:41:16.171196 after 5.77 seconds
+[0m13:41:16.172018 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BDF474C4D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BDF48485D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BDF3FB09F0>]}
+[0m13:41:16.172554 [debug] [MainThread]: Flushing usage events
+[0m13:41:17.066423 [debug] [MainThread]: An error was encountered while trying to flush usage events
