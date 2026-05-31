@@ -25,5 +25,4 @@ jobs:
          pip install -r requirements.txt
      - name: Syntax check
        run: |
-         python -m py_compile pipeline/ingest.py pipeline/validate.py
-pipeline/orchestrate.py
+         python -m py_compile pipeline/ingest.py pipeline/validate.py pipeline/orchestrate.py
